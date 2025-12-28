@@ -31,9 +31,18 @@ let () =
   let t_in1 = input "in1" 1 in 
   let t_in2 = input "in2" 1 in
   let scope = Scope.create ~flatten_design:false in
-  let circ_inst = Circuit.create_exn
-    ~name:"top"
+  let circ_inst = Controller._create scope
+    {
+    _in1 = t_in1;
+    _in2 = t_in2;
+    } in
+  let t_out1 = output "q" circ_inst._out1 in
 
-    in
-  (* Rtl.print Verilog circuit; *)
+  let printCirc = 
+    Circuit.create_exn
+    ~name:"top"
+    [t_out1]
+  in
+
+  Rtl.print Verilog printCirc;
   ()
