@@ -4,9 +4,9 @@ open Unix
 let ( let* ) = Result.bind
 
 let _runCommand 
-  ~(prog: string) ~(args: string list)
-  : 
-  (unit, string) result =
+  ~(prog: string) 
+  ~(args: string list) 
+  : (unit, string) result =
 
     match fork () with
     | 0 -> let argv = Array.of_list (prog :: args) in

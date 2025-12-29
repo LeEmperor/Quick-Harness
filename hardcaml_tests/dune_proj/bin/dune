@@ -1,4 +1,7 @@
-(executable
+(
+ executable
  (public_name dune_proj)
  (name main)
- (libraries dune_proj hardcaml ppx_hardcaml))
+ (libraries dune_proj hardcaml ppx_hardcaml core)
+ (preprocess (pps ppx_jane ppx_hardcaml))
+ )
