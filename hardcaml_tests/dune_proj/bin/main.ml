@@ -153,6 +153,7 @@ let () =
     ~name:"fsm_test"
     [t_done;]
   in
+  (* Rtl.print Verilog printCirc; *)
   Rtl.print Verilog printCirc;
 
   ()

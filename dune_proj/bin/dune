@@ -1,5 +1,5 @@
 (executable
  (public_name dune_proj)
- (name main)
+ (name test)
  (libraries dune_proj core unix))
 
